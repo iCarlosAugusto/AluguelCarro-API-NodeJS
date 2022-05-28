@@ -1,5 +1,5 @@
-import { Category } from "../models/Category";
-import { ICategoryRepository } from "./ICategoryRepository";
+import { Category } from "../../models/Category";
+import { ICategoryRepository } from "../ICategoryRepository";
 interface ICreateCategoryDTO {
   name: string;
   description: string;

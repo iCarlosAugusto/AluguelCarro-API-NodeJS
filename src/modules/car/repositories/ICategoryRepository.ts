@@ -1,4 +1,4 @@
-import { CategoryRepository } from "./CategoryRepository";
+import { CategoryRepository } from "./implementations/CategoryRepository";
 import { Category } from "../models/Category";
 
 interface ICategoryRepository {
