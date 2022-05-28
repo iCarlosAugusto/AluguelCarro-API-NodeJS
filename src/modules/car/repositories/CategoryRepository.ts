@@ -6,10 +6,17 @@ interface ICreateCategoryDTO {
 }
 
 class CategoryRepository implements ICategoryRepository {
-  private categories: Category[];
-  
-  constructor() {
+  private constructor() {
     this.categories = [];
+  }
+  private categories: Category[];
+  private static INSTANCE: CategoryRepository;
+
+  public static getInstance() {
+    if(!CategoryRepository.INSTANCE){
+      CategoryRepository.INSTANCE = new CategoryRepository();
+    }
+    return CategoryRepository.INSTANCE;
   }
 
   create({ name, description }: ICreateCategoryDTO): void {
