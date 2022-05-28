@@ -24,6 +24,11 @@ class CategoryRepository {
     return this.categories;
   };
 
+  findByName(name: string){
+    const result = this.categories.find((category) => category.name === name);
+    return result;
+  };
+
   constructor() {
     this.categories = [];
   };

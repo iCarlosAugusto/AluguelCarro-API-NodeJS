@@ -8,6 +8,11 @@ const categoryRepository = new CategoryRepository();
 
 categoriesRouter.post("/", (req: Request, res: Response) => {
   const { name, description } = req.body;
+
+  const categoryAlreadyExists = categoryRepository.findByName(name);
+  if(categoryAlreadyExists){
+    return res.status(400).json({"Erro": "Category already exists"});
+  };
   categoryRepository.create({name, description});
 
   res.status(200).json({"status": "success"});
