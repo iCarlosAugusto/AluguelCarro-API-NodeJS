@@ -9,7 +9,8 @@ class ImportCategoriesController {
   }
 
   handler(request: Request, response: Response) {
-    this.importCategoriesUseCase.execute("TESTE");
+    const { file } = request;
+    this.importCategoriesUseCase.execute(file);
     response.status(200).json({"success": true});
   }
 }
