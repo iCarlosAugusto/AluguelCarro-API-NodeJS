@@ -7,7 +7,7 @@ class ListCategoriesController {
     this.listCategoriesUseCase = listCategoriesCase;
   }
 
-  handler(request: Request, response: Request) {
+  handler(request: Request, response: Response) {
     const all = this.listCategoriesUseCase.execute();
   
     return response.json(all);
