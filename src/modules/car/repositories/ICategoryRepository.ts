@@ -1,5 +1,5 @@
 import { CategoryRepository } from "./implementations/CategoryRepository";
-import { Category } from "../models/Category";
+import { Category } from "../entities/Category";
 
 interface ICategoryRepository {
   create({name, description}): void;
