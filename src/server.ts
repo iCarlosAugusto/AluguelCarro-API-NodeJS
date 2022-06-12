@@ -1,6 +1,8 @@
 import express, { json } from "express";
 import { categoriesRouter } from "./routes/categories.routes";
 
+import "./database"
+
 const app = express();
 app.listen();
 
