@@ -9,9 +9,9 @@ class CreateCategoryController {
     this.createCategoryUseCase = createCategoryUseCase
   };
 
-  handler(request: Request, response: Response) {
+  async handler(request: Request, response: Response) {
     const { name, description } = request.body;
-    this.createCategoryUseCase.execute({ name, description });
+    await this.createCategoryUseCase.execute({ name, description });
     response.status(200).json({ status: "success" });
   }
 }
