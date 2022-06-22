@@ -9,16 +9,12 @@ interface ICreateCategoryDTO {
 class CategoryRepository implements ICategoryRepository {
   private repository: Repository<Category>;
 
-  private categories: Category[];
-  private static INSTANCE: CategoryRepository;
-
   constructor() {
     this.repository = getRepository(Category);
   }
 
   async create({ name, description }: ICreateCategoryDTO): Promise<void> {
     const category = this.repository.create({ name, description });
-
     await this.repository.save(category);
   }
 
