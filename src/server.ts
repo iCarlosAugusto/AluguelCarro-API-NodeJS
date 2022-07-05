@@ -1,7 +1,9 @@
 import express, { json } from "express";
+import 'reflect-metadata';
 import { categoriesRouter } from "./routes/categories.routes";
 
 import "./database"
+import "./shared/container";
 
 const app = express();
 app.listen();
